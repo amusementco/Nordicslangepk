@@ -14,7 +14,7 @@ export function ContactSection() {
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-[#283241] to-[#3D5B80] text-white p-10 rounded-3xl shadow-xl hover:scale-105 transition-transform">
+          <div className="bg-gradient-to-br from-[#283241] to-[#3D5B80] text-white p-10 rounded-2xl shadow-xl hover:scale-105 transition-transform">
             <h3 className="text-3xl mb-8 uppercase tracking-wider">Press</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ export function ContactSection() {
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-[#3D5B80] to-[#8EB2BC] text-white p-10 rounded-3xl shadow-xl hover:scale-105 transition-transform">
+          <div className="bg-gradient-to-br from-[#3D5B80] to-[#8EB2BC] text-white p-10 rounded-2xl shadow-xl hover:scale-105 transition-transform">
             <h3 className="text-3xl mb-8 uppercase tracking-wider">Booking</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -44,7 +44,7 @@ export function ContactSection() {
             </div>
           </div>
           
-          <div className="bg-white border-4 border-[#8EB2BC] text-[#283241] p-10 rounded-3xl shadow-xl hover:scale-105 transition-transform">
+          <div className="bg-white border-4 border-[#8EB2BC] text-[#283241] p-10 rounded-2xl shadow-xl hover:scale-105 transition-transform">
             <h3 className="text-3xl mb-8 uppercase tracking-wider">Online</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4">

@@ -16,7 +16,7 @@ function RipplesLight() {
 
 export function AboutSection() {
   return (
-    <div className="py-20 px-8 bg-white text-[#283241] relative overflow-hidden">
+    <div className="py-20 px-8 bg-[#f9f3eb] text-[#283241] relative overflow-hidden">
       {/* Ripple decoration */}
       <div className="absolute top-0 right-8 w-[150px] opacity-10">
         <RipplesLight />
@@ -46,7 +46,7 @@ export function AboutSection() {
           </div>
           
           <div className="flex flex-col justify-center">
-            <div className="bg-gradient-to-br from-[#283241] to-[#3D5B80] text-white p-10 mb-10 rounded-3xl shadow-xl">
+            <div className="bg-white text-[#283241] p-10 mb-10 rounded-2xl shadow-lg border border-black/5">
               <h3 className="text-3xl mb-6 uppercase tracking-wider">The Album</h3>
               <p className="text-lg leading-relaxed">
                 With "Guilty Ripple Art," Nordic Slang explores themes of consequence, connection, 

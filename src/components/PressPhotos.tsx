@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import composite from '../assets/nordic-slang-composite.jpg';
+import outdoors from '../assets/nordic-slang-outdoors.jpg';
+import posing from '../assets/nordic-slang-posing.jpg';
+import seated from '../assets/nordic-slang-seated.jpg';
 
 export function PressPhotos() {
-  const photos = [
-    {
-      url: 'https://images.unsplash.com/photo-1677957855684-866bda07805e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpZSUyMGJhbmQlMjBwZXJmb3JtYW5jZXxlbnwxfHx8fDE3NjUwMTM5MzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      caption: 'LIVE'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1682372182177-9f8b9d9a59cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHN0dWRpbyUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NTA2MDUxN3ww&ixlib=rb-4.1.0&q=80&w=1080',
-      caption: 'STUDIO'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1739051261848-fdf6c43fe0d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5kJTIwcHJvbW8lMjBwaG90b3xlbnwxfHx8fDE3NjUwNjA1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      caption: 'PROMO'
+  const [selected, setSelected] = useState<{ url: string; caption: string } | null>(null);
+
+  useEffect(() => {
+    if (selected) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prev;
+      };
     }
+  }, [selected]);
+
+  const photos = [
+    { url: composite, caption: '' },
+    { url: outdoors, caption: '' },
+    { url: posing, caption: '' },
+    { url: seated, caption: '' },
   ];
 
   return (
@@ -28,11 +38,12 @@ export function PressPhotos() {
           <h2 className="text-7xl tracking-tighter uppercase text-white">Press Photos</h2>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
           {photos.map((photo, index) => (
             <div 
               key={index} 
-              className="group relative overflow-hidden rounded-3xl shadow-2xl"
+              className="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer"
+              onClick={() => setSelected(photo)}
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -51,7 +62,16 @@ export function PressPhotos() {
             </div>
           ))}
         </div>
-        
+
+        <Lightbox
+          open={!!selected}
+          close={() => setSelected(null)}
+          slides={photos.map((p) => ({ src: p.url, description: p.caption }))}
+          index={selected ? photos.findIndex((p) => p.url === selected.url) : 0}
+          carousel={{ finite: true }}
+          controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
+        />
+
         <div className="mt-12 text-center border-2 border-[#8EB2BC] p-8 rounded-full inline-block w-full">
           <p className="text-xl uppercase tracking-wider text-white">
             High-res photos available on request

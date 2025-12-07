@@ -74,19 +74,19 @@ export function AlbumSection() {
           
           {/* Album details sidebar */}
           <div className="space-y-8">
-            <div className="bg-white text-[#283241] p-8 rounded-3xl shadow-xl">
+            <div className="bg-white text-[#283241] p-8 rounded-xl shadow-lg border border-black/5">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Release</h3>
               <p className="mb-2">Coming Soon 2025</p>
               <p className="opacity-70">Independent</p>
             </div>
             
-            <div className="bg-gradient-to-br from-[#8EB2BC] to-[#3D5B80] text-white p-8 rounded-3xl shadow-xl">
+            <div className="bg-[#283241] text-white p-8 rounded-xl shadow-lg border border-white/10">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Format</h3>
               <p className="mb-2">Digital / Vinyl</p>
               <p className="opacity-90">10 Tracks</p>
             </div>
             
-            <div className="bg-gradient-to-br from-[#3D5B80] to-[#283241] text-white p-8 rounded-3xl shadow-xl">
+            <div className="bg-[#1f2533] text-white p-8 rounded-xl shadow-lg border border-white/10">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Production</h3>
               <p className="mb-2">Produced by Nordic Slang</p>
               <p className="opacity-90 text-sm">Mixed & Mastered</p>
