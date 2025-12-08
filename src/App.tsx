@@ -47,15 +47,6 @@ export default function App() {
       <PressPhotos />
       <ContactSection />
       
-      {/* Print Button - Hidden when printing */}
-      <div className="fixed bottom-8 right-8 no-print z-50">
-        <button
-          onClick={() => window.print()}
-          className="bg-[#283241] text-white px-8 py-4 uppercase tracking-widest hover:bg-[#3D5B80] transition-all duration-300 transform hover:scale-105 shadow-2xl"
-        >
-          Save PDF
-        </button>
-      </div>
     </div>
   );
 }

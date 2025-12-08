@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import band from '../assets/nordic-slang-band.jpg';
 import composite from '../assets/nordic-slang-composite.jpg';
 import outdoors from '../assets/nordic-slang-outdoors.jpg';
 import posing from '../assets/nordic-slang-posing.jpg';
@@ -20,6 +21,7 @@ export function PressPhotos() {
   }, [selected]);
 
   const photos = [
+    { url: band, caption: '' },
     { url: composite, caption: '' },
     { url: outdoors, caption: '' },
     { url: posing, caption: '' },
@@ -30,15 +32,11 @@ export function PressPhotos() {
     <div className="py-20 px-8 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 flex items-center gap-8">
-          <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#8EB2BC]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#3D5B80]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#283241]"></div>
-          </div>
-          <h2 className="text-7xl tracking-tighter uppercase text-white">Press Photos</h2>
+
+          <h2 className="heading-tratt text-7xl tracking-tighter uppercase text-white">Photos</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {photos.map((photo, index) => (
             <div 
               key={index} 
@@ -72,8 +70,8 @@ export function PressPhotos() {
           controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
         />
 
-        <div className="mt-12 text-center border-2 border-[#8EB2BC] p-8 rounded-full inline-block w-full">
-          <p className="text-xl uppercase tracking-wider text-white">
+        <div className="mt-12 text-center">
+          <p className="text-sm uppercase tracking-wider text-white/70">
             High-res photos available on request
           </p>
         </div>

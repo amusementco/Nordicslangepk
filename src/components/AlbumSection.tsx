@@ -29,21 +29,20 @@ export function AlbumSection() {
   ];
 
   return (
-    <div className="py-20 px-8 relative bg-[#0a0a0a]">
-      {/* Background accent */}
-      <div className="absolute top-1/4 left-0 w-[120px] opacity-20">
-        <RipplesDark />
+    <div className="relative bg-[#0a0a0a] overflow-hidden">
+      {/* Background accent spanning full height (left aligned, like About) */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-y-0 left-4 w-[110px] opacity-8 h-full">
+          <RipplesDark />
+        </div>
       </div>
-      <div className="absolute bottom-1/4 right-8 w-[100px] opacity-15">
-        <RipplesDark />
-      </div>
-      
-      <div className="max-w-7xl mx-auto">
+
+      <div className="py-20 px-8 max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-3 gap-16 mb-16">
           {/* Track listing takes 2 columns */}
           <div className="lg:col-span-2">
-            <h2 className="text-7xl mb-12 tracking-tighter text-white">
-              TRACK<br/>LISTING
+            <h2 className="heading-tratt text-7xl mb-12 tracking-tighter text-white">
+              TRACK LISTING
             </h2>
             
             <div className="space-y-0">
@@ -76,20 +75,52 @@ export function AlbumSection() {
           <div className="space-y-8">
             <div className="bg-white text-[#283241] p-8 rounded-xl shadow-lg border border-black/5">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Release</h3>
-              <p className="mb-2">Coming Soon 2025</p>
-              <p className="opacity-70">Independent</p>
+              <p className="mb-2">Early 2026</p>
+              <p className="opacity-70">
+                <a 
+                  href="https://amusementcorecords.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="underline hover:text-[#8EB2BC] transition-colors"
+                >
+                  Amusement Co. Records
+                </a>
+                </p>
             </div>
             
             <div className="bg-[#283241] text-white p-8 rounded-xl shadow-lg border border-white/10">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Format</h3>
-              <p className="mb-2">Digital / Vinyl</p>
+              <p className="mb-2">
+                Digital&nbsp;
+                <a
+                  href="https://distrokid.com/hyperfollow/nordicslang/art-ep"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-[#8EB2BC] transition-colors"
+                >
+                  (Pre-save)
+                </a>
+              </p>
+              <p className="mb-2">
+                Vinyl&nbsp;
+                <a
+                  href="https://nordicslang.bandcamp.com/album/call-it-art"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-[#8EB2BC] transition-colors"
+                >
+                  (Pre-order)
+                </a>
+              </p>
               <p className="opacity-90">10 Tracks</p>
             </div>
             
             <div className="bg-[#1f2533] text-white p-8 rounded-xl shadow-lg border border-white/10">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Production</h3>
               <p className="mb-2">Produced by Nordic Slang</p>
-              <p className="opacity-90 text-sm">Mixed & Mastered</p>
+              <p className="mb-1 opacity-90 text-sm">Recorded at The Studio at Amusement Co Records and Redtoquer Studios</p>
+              <p className="mb-1 opacity-90 text-sm">Mixed by Nate Torgerson</p>
+              <p className="opacity-90 text-sm">Mastered by The Bit Farm</p>
             </div>
           </div>
         </div>

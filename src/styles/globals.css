@@ -1,5 +1,23 @@
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Trattatello';
+  src: url('../assets/fonts/Trattatello.woff2') format('woff2'),
+       url('../assets/fonts/Trattatello.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: 'Trattatello', var(--font-sans);
+}
+
+/* Override base sans for body copy */
+:root {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 :root {
   --font-size: 16px;
   --background: #ffffff;
@@ -129,6 +147,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+/* Global link styling */
+a {
+  color: #8EB2BC;
+  text-decoration: none;
+}
+a:hover {
+  color: #4f7c8a;
+  text-decoration: underline;
+}
 }
 
 /**
@@ -146,6 +174,7 @@
       font-size: var(--text-xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
+  font-family: var(--font-heading);
     }
 
     h3 {
@@ -199,3 +228,160 @@ html {
 .border-white\/10 { border-color: rgba(255,255,255,0.1); }
 .border-black\/5 { border-color: rgba(0,0,0,0.05); }
 .hover\:scale-105:hover { transform: scale(1.05); }
+
+/* Hero layout (no Tailwind dependency) */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 24px 88px;
+  background: #0a0a0a;
+}
+@media (min-width: 640px) {
+  .hero { padding: 300px 32px 104px; }
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 0%;
+  background-color: #161c24;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.9) 100%);
+  z-index: 1;
+}
+.hero__content {
+  position: relative;
+  z-index: 5;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.hero__chip {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  /* background: #283241; */
+  color: #fff;
+  /* padding: 10px 18px; */
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 10px;
+  text-align: center;
+  z-index: 6;
+  width: fit-content;
+}
+@media (min-width: 640px) {
+  .hero__chip { top: 24px; padding: 12px 24px; font-size: 12px; }
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero__grid { grid-template-columns: 1.1fr 0.9fr; gap: 40px; }
+}
+.hero__text {
+  order: 2;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero__text { order: 1; text-align: left; }
+}
+.hero__logo img,
+.hero__sublogo img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+  drop-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.hero__logo {
+  color: #fff;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1024px) {
+  .hero__logo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.hero__subheading {
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+@media (min-width: 640px) {
+  .hero__subheading { font-size: 22px; margin-bottom: 32px; }
+}
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+@media (min-width: 1024px) {
+  .hero__cta { align-items: flex-start; }
+}
+.hero__button {
+  display: inline-block;
+  background: #8EB2BC;
+  color: #0a0a0a;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 35px -10px rgba(0,0,0,0.22);
+}
+.hero__meta {
+  color: #dfe6ea;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hero__cover {
+  order: 1;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .hero__cover { order: 2; justify-content: center; }
+}
+.hero__cover img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+@media (min-width: 640px) {
+  .hero__cover img { max-width: 320px; }
+}
+
+.heading-tratt {
+  font-family: 'Trattatello', 'Times New Roman', serif;
+  text-transform: uppercase;
+}
