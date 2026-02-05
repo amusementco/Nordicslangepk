@@ -19,10 +19,10 @@ export function EPKHero() {
             <div className="hero__logo heading-tratt text-7xl">Guilty Ripple Art</div>
             <div className="hero__subheading">New album from Nordic Slang</div>
             <div className="hero__cta">
-              <a className="hero__button" href="https://distrokid.com/hyperfollow/nordicslang/art-ep" target="_blank" rel="noreferrer">
+              <a className="hero__button" href="https://distrokid.com/hyperfollow/nordicslang/guilty-ripple-art-2" target="_blank" rel="noreferrer">
                 Pre-save now
               </a>
-              <div className="hero__meta">Release date: TBA (vinyl pending)</div>
+              <div className="hero__meta">Release date: February 19, 2026</div>
             </div>
           </div>
           

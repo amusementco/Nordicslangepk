@@ -75,7 +75,7 @@ export function AlbumSection() {
           <div className="space-y-8">
             <div className="bg-white text-[#283241] p-8 rounded-xl shadow-lg border border-black/5">
               <h3 className="text-2xl mb-4 uppercase tracking-wider">Release</h3>
-              <p className="mb-2">Early 2026</p>
+              <p className="mb-2">February 19, 2026</p>
               <p className="opacity-70">
                 <a 
                   href="https://amusementcorecords.com/" 
@@ -93,7 +93,7 @@ export function AlbumSection() {
               <p className="mb-2">
                 Digital&nbsp;
                 <a
-                  href="https://distrokid.com/hyperfollow/nordicslang/art-ep"
+                  href="https://distrokid.com/hyperfollow/nordicslang/guilty-ripple-art-2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-[#8EB2BC] transition-colors"
@@ -102,15 +102,7 @@ export function AlbumSection() {
                 </a>
               </p>
               <p className="mb-2">
-                Vinyl&nbsp;
-                <a
-                  href="https://nordicslang.bandcamp.com/album/call-it-art"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-[#8EB2BC] transition-colors"
-                >
-                  (Pre-order)
-                </a>
+                Vinyl&nbsp; coming soon
               </p>
               <p className="opacity-90">10 Tracks</p>
             </div>
