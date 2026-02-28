@@ -98,11 +98,10 @@ export function AlbumSection() {
                   rel="noopener noreferrer"
                   className="underline hover:text-[#8EB2BC] transition-colors"
                 >
-                  (Pre-save)
                 </a>
               </p>
               <p className="mb-2">
-                Vinyl&nbsp; coming soon
+                Vinyl&nbsp;
               </p>
               <p className="opacity-90">10 Tracks</p>
             </div>
